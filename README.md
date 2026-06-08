@@ -36,6 +36,9 @@ The script makes empty commits with backdated `GIT_AUTHOR_DATE` / `GIT_COMMITTER
 git clone https://github.com/your-username/commit-art.git
 cd commit-art
 
+# Preview a pattern first (no commits made)
+node preview.js patterns/heart.json
+
 # Draw a heart on 2025's graph
 node draw.js patterns/heart.json 2025
 
@@ -51,8 +54,38 @@ git push origin main
 
 | File | Preview |
 |------|---------|
-| `patterns/heart.json` | Pixel heart (~12 weeks wide) |
-| `patterns/star.json` | Pixel star (~11 weeks wide) |
+| `patterns/heart.json` | Pixel heart (~12 weeks) |
+| `patterns/star.json` | Pixel star (~11 weeks) |
+| `patterns/smiley.json` | Smiley face (~15 weeks) |
+| `patterns/skull.json` | Pixel skull (~13 weeks) |
+| `patterns/arrow.json` | Right arrow (~15 weeks) |
+| `patterns/diamond.json` | Diamond (~15 weeks) |
+| `patterns/pi.json` | Pi symbol (π, ~14 weeks) |
+
+### Preview a Pattern
+
+See what a pattern looks like before committing:
+
+```bash
+node preview.js patterns/heart.json
+```
+
+Output:
+```
+  Pattern: Heart
+  Grid: 13 weeks x 7 days
+
+  Mon    ░░██░██░░
+  Tue   ░████░████
+  Wed   ███████████
+  Thu   ████████████
+  Fri   ████████████
+  Sat   ░█████████░
+  Sun   ░░███████░░
+
+  Filled cells: 63
+  Total commits: 63
+```
 
 ### Making Your Own
 
